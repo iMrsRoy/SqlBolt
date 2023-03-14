@@ -1,0 +1,16 @@
+https://sqlbolt.com/lesson/select_queries_order_of_execution
+
+# Exercise 12 — Tasks
+1. Find the number of movies each director has directed ✓ 
+
+SELECT count(title), director FROM movies
+group by director having director >1 ;
+
+2. Find the total domestic and international sales that can be attributed to each director ✓
+
+SELECT director, sum(domestic_sales+international_sales) as World_wide_collection
+FROM movies m
+join boxoffice b 
+on b.movie_id = m.id
+group by director
+having director >1 
