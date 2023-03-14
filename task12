@@ -1,6 +1,22 @@
 https://sqlbolt.com/lesson/select_queries_order_of_execution
 
-# Exercise 12 — Tasks
+Exercise 11 — Tasks
+1. Find the number of Artists in the studio (without a HAVING clause) ✓
+SELECT count(*) FROM employees
+where role = "Artist";
+
+2. Find the number of Employees of each role in the studio ✓
+SELECT count(name), role 
+FROM employees
+group by role;
+
+3. Find the total number of years employed by all Engineers ✓
+SELECT role, sum(Years_employed)
+FROM employees 
+where role = "Engineer" 
+group by 1;
+
+Exercise 12 — Tasks
 1. Find the number of movies each director has directed ✓ 
 
 SELECT count(title), director FROM movies
